@@ -26,7 +26,9 @@ public class Utilizador {
         else {
             nrTentativasFalhadas++;
             if(nrTentativasFalhadas == 3) {
-                horaDesbloqueio = System.currentTimeMillis() + 4 * 60 * 60 * 1000;
+                // bloquear
+                int quatroHoras = 4 * 60 * 60 * 1000;
+                horaDesbloqueio = System.currentTimeMillis() + quatroHoras;
             }
             return false;
         }

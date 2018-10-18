@@ -11,11 +11,13 @@ public class Utilizador {
     
     boolean verificarCredenciais(String username, String password) {
         
+        // verificar se passou o tempo de bloqueio
         if(System.currentTimeMillis() > horaDesbloqueio) {
             nrTentativasFalhadas = 0;
             horaDesbloqueio = -1;
         }
         
+        // verificar se continua bloqueado
         if(horaDesbloqueio > 0) {
             return false;
         }
